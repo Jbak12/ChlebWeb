@@ -1,0 +1,104 @@
+/* Reset and Base Styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.header {
+    width: 100%;
+    background-color: #f4a261;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+.menu {
+    width: 100%;
+    background-color: #2a9d8f;
+    padding: 10px 0;
+}
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+.menu li {
+    margin: 0 15px;
+}
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.menu a:hover {
+    text-decoration: underline;
+}
+.content {
+    flex: 3;
+    padding: 20px;
+}
+.sidebar {
+    flex: 1;
+    background-color: #e9c46a;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.sidebar img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.footer {
+    width: 100%;
+    text-align: center;
+    background-color: #264653;
+    color: white;
+    padding: 10px 0;
+}
+
+.main-container {
+    /* max-width: 1200px; */
+    margin: 0px auto; 
+    background-color: #f9f9f9; 
+    padding: 70px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow for style */
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table, th, td {
+    border: 1px solid #ccc;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+thead {
+    background-color: #2a9d8f;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content, .sidebar {
+        flex: 100%;
+    }
+    .menu ul {
+        flex-direction: column;
+    }
+    .menu li {
+        margin: 5px 0;
+    }
+}
