@@ -1,0 +1,55 @@
+.content {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+h2 {
+    color: #264653;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#calculate-btn {
+    background-color: #2a9d8f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#calculate-btn:hover {
+    background-color: #264653;
+}
+
+#result {
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2a9d8f;
+}
+
+footer {
+    background-color: #264653;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}

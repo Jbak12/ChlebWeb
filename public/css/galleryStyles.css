@@ -1,0 +1,14 @@
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+    align-items: center;
+    margin: 2rem auto;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 600px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

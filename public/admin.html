@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add Recipe</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <script>
+        // Check if the user is logged in
+        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'login.html'; // Redirect to login page
+        }
+    </script>
+
+    <div class="main-container">
+        <header class="header">
+            <h1>Add New Recipe</h1>
+        </header>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">ChlebWeb</a></li>
+                <li><a href="recipes.html">Przepisy</a></li>
+                <li><a href="calculator.html">Kalkulator</a></li>
+                <li><a href="gallery.html">Galeria</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h2>Dodaj nowy przepis</h2>
+            <form id="add-recipe-form">
+                <div class="input-group">
+                  <label for="title">Tytuł:</label>
+                  <input type="text" id="title" required>
+                </div>
+                <div class="input-group">
+                  <label for="description">Opis:</label>
+                  <textarea id="description" required></textarea>
+                </div>
+                <div class="input-group">
+                  <label for="ingredients">Składniki:</label>
+                  <textarea id="ingredients" required></textarea>
+                </div>
+                <div class="input-group">
+                  <label for="instructions">Przygotowanie:</label>
+                  <textarea id="instructions" required></textarea>
+                </div>
+                <div class="input-group">
+                  <label for="image">Obraz:</label>
+                  <input type="file" id="image" accept="image/*" required> <!-- File input for image -->
+                </div>
+                <button type="submit">Dodaj przepis</button>
+              </form>
+            <p id="success-message" style="color: green; display: none;">Przepis dodany pomyślnie!</p>
+            <p id="error-message" style="color: red; display: none;">Błąd podczas dodawania przepisu.</p>
+        </main>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('add-recipe-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const recipe = {
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                ingredients: document.getElementById('ingredients').value,
+                instructions: document.getElementById('instructions').value,
+                image_url: document.getElementById('image_url').value,
+            };
+
+            const response = await fetch('/api/recipes', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(recipe),
+            });
+
+            if (response.ok) {
+                document.getElementById('success-message').style.display = 'block';
+                document.getElementById('error-message').style.display = 'none';
+                setTimeout(() => {
+                    window.location.href = 'recipes.html'; // Redirect to recipes page
+                }, 2000); // Redirect after 2 seconds
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('success-message').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

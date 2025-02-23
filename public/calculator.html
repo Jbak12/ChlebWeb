@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator piekarski</title>
+    <link rel="stylesheet" href="/css/styles.css"> 
+    <link rel="stylesheet" href="/css/calculatorStyle.css"> 
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>Kalkulator piekarski</h1>
+        </header>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">ChlebWeb</a></li>
+                <li><a href="recipes.html">Przepisy</a></li>
+                <li><a href="calculator.html">Kalkulator</a></li>
+                <li><a href="gallery.html">Galeria</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="login.html">Admin</a></li> <!-- Add this line -->
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h2>Podaj skladniki w drozdzach piekarskich</h2>
+            <form id="calculator-form">
+                <div class="input-group">
+                    <label for="flour-weight">Mąka (g):</label>
+                    <input type="number" id="flour-weight" required>
+                </div>
+                <div class="input-group">
+                    <label for="water-percentage">Woda (%):</label>
+                    <input type="number" id="water-percentage" required>
+                </div>
+                <div class="input-group">
+                    <label for="milk-percentage">Mleko (%):</label>
+                    <input type="number" id="milk-percentage" required>
+                </div>
+                <div class="input-group">
+                    <label for="yeast-percentage">Drozdze (%):</label>
+                    <input type="number" id="yeast-percentage" required>
+                </div>
+                <div class="input-group">
+                    <label for="salt-percentage">Sól (%):</label>
+                    <input type="number" id="salt-percentage" required>
+                </div>
+
+                <button type="button" id="calculate-btn">Calkowita waga ciasta</button>
+            </form>
+
+            <div id="result">
+                <h3>Wagi produktow:</h3>
+                <ul>
+                    <li>Mąka: <span id="flour-weight-result">0</span> g</li>
+                    <li>Woda: <span id="water-weight-result">0</span> g</li>
+                    <li>Mleko: <span id="milk-weight-result">0</span> g</li>
+                    <li>Drozdze: <span id="yeast-weight-result">0</span> g</li>
+                    <li>Sól: <span id="salt-weight-result">0</span> g</li>
+                </ul>
+                <h3>Calkiwita masa: <span id="dough-weight">0</span> g</h3>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 My Bread Baking Hobby. All rights reserved.</p>
+    </footer>
+
+    <script src="js/calculator.js"></script> 
+</body>
+</html>
